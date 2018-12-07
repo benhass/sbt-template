@@ -14,10 +14,9 @@ lazy val root = (
        scalacOptions in (Compile, console) ++= wordSeq("-language:_ -Yno-adapted-args"),
                    javacOptions in Compile ++= wordSeq("-nowarn -XDignore.symbol.file"),
                 initialCommands in console +=  "\nimport java.nio.file._, psp._",
-                       libraryDependencies ++= Seq(
+                       libraryDependencies ++=
                                                  Dependencies.akka ++
-                                                 Dependencies.cats ++
-                                               )
+                                                 Dependencies.cats
   )
   plugins (
     PluginD.kindProjector
